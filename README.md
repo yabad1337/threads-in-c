@@ -69,3 +69,11 @@ If the threads execute the withdraw function at the same time, a race condition 
 6. Thread 2 calls `set_balance(500)`, overwriting the previous update and also updating the balance to $500.
 
 As a result, the final balance of the account is $500 instead of the expected $0.
+
+### Thread return value
+to get a return value from a thread we can use the `retval` parameter of the function : 
+```c
+int pthread_join(pthread_t thread, void **retval);
+```
+#### Demonstration :
+in `8-thread_return.c` file
